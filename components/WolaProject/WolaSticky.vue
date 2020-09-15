@@ -1,15 +1,25 @@
 <template>
-    <div class="stick-container">
+    <div class="wrapper" v-bind:style="{height:(heightWrapper-150) + 'px'}">
+        <div class="stick-container">
         <slot></slot>
+        </div>
     </div>
 </template>
 
 <style scoped>
+    .wrapper{
+        position:absolute;
+        height: 100%;
+        width:250px
+    }
     div.stick-container{
         position: -webkit-sticky; /* Required for Safari */
         position: sticky;
+        margin-top:167px;
         top:155px;
-        left:75px;
+        margin-left:-75px;
+        width:auto;
+        height: 50px;
         font-family: Mont;
         font-style: normal;
         font-weight: 600;
@@ -25,3 +35,9 @@
         transform: rotate(-90deg);
     }
 </style>
+
+<script>
+export default {
+    props:['height-wrapper']
+}
+</script>

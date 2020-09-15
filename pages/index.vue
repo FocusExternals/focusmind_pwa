@@ -85,8 +85,8 @@
         </div>
       </div>
      </div>
-     <div>
-       <!-- <WolaSticky>Definición de objetivos</WolaSticky> -->
+     <div ref="wrapper-objetives">
+       <WolaSticky :height-wrapper="getHeightWrapper('wrapper-objetives')">Definición de objetivos</WolaSticky>
       <div id="section4" class="sections" ref="section4">
         <div class="padding-block left" >
           <div class="mb">
@@ -116,109 +116,112 @@
       
       </div>
      </div>
-    <div id="section5" class="sections" ref="section5">
-      <div class="padding-block" >
-        <div class="mb left">
+     <div ref="wrapper-branding">
+      <WolaSticky :height-wrapper="getHeightWrapper('wrapper-branding')">Branding</WolaSticky>
+      <div id="section5" class="sections" ref="section5">
+        <div class="padding-block" >
+          <div class="mb left">
+            <TextTitleContent>
+              Naming
+            </TextTitleContent>
+            <TextSubtitleContent>
+              Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquipconsequat.
+            </TextSubtitleContent>
+          </div>
+          <div class="columns pr">
+            <WolaListName>
+              <p>MindsOn</p>
+              <p>EagerMinds</p>
+              <p>DigitalNerds</p>
+              <p>DigitalAcademy</p>
+
+            </WolaListName>
+            <WolaListName>
+              <p>TheDigitalUni</p>
+              <p>CollegeOn</p>
+              <p>Brandsgetdigital</p>
+              <p>Smartmarketing</p>
+            </WolaListName>
+            <WolaListName>
+              <p>Innovativa</p>
+              <p><strong>WOLA</strong></p>
+              <p>TheVanguard</p>
+              <p>ChesterAcademy</p>
+            </WolaListName>
+            <WolaListName>
+            <p> Businessminds</p>
+              <p>LeaderEducation</p>
+              <p>DigitalMindsAcademia</p>
+            <p> Eduatica </p>
+            </WolaListName>
+          </div>
+        </div>
+      </div>
+      <div id="section6" class="sections" ref="section6" style="background-color:#B38A58">
+          <div class="padding-block pr">
+              <WolaCite author="Juan Pablo Laco." role="Director de Focus Mind">
+                “Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam”.
+              </WolaCite>
+          </div>
+      </div>
+      <div id="section7" class="sections" ref="section">
+        <div class="padding-block left">
           <TextTitleContent>
-            Naming
+            Diseño y conceptualización
           </TextTitleContent>
-          <TextSubtitleContent>
+          <TetxtParagraph>
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo velit esse molestie consequat quis nostrud exerci tation ullamcorper.
+          </TetxtParagraph>
+
+        </div>
+        <div class="padding-block pr">
+          <WolaCiteSimple>
             Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquipconsequat.
-          </TextSubtitleContent>
+          </WolaCiteSimple>
         </div>
-        <div class="columns pr">
-          <WolaListName>
-            <p>MindsOn</p>
-            <p>EagerMinds</p>
-            <p>DigitalNerds</p>
-            <p>DigitalAcademy</p>
-
-          </WolaListName>
-          <WolaListName>
-            <p>TheDigitalUni</p>
-            <p>CollegeOn</p>
-            <p>Brandsgetdigital</p>
-            <p>Smartmarketing</p>
-          </WolaListName>
-          <WolaListName>
-            <p>Innovativa</p>
-            <p><strong>WOLA</strong></p>
-            <p>TheVanguard</p>
-            <p>ChesterAcademy</p>
-          </WolaListName>
-          <WolaListName>
-           <p> Businessminds</p>
-            <p>LeaderEducation</p>
-            <p>DigitalMindsAcademia</p>
-           <p> Eduatica </p>
-          </WolaListName>
-        </div>
+      
       </div>
-    </div>
-    <div id="section6" class="sections" ref="section6" style="background-color:#B38A58">
-        <div class="padding-block pr">
-            <WolaCite author="Juan Pablo Laco." role="Director de Focus Mind">
-              “Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam”.
-            </WolaCite>
-        </div>
-    </div>
-    <div id="section7" class="sections" ref="section">
-      <div class="padding-block left">
-        <TextTitleContent>
-          Diseño y conceptualización
-        </TextTitleContent>
-        <TetxtParagraph>
-          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo velit esse molestie consequat quis nostrud exerci tation ullamcorper.
-        </TetxtParagraph>
-
+      <div class="sections" id="section8">
+        <WolaImageLogo/>
       </div>
-      <div class="padding-block pr">
-        <WolaCiteSimple>
-          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquipconsequat.
-        </WolaCiteSimple>
-      </div>
-     
-    </div>
-    <div class="sections" id="section8">
-      <WolaImageLogo/>
-    </div>
-    <div id="section9" class="sections" ref="section9" >
-        <div class="padding-block">
-            <div class="left">
-              <TextTitleContent >
-                Digital Branding
-              </TextTitleContent>
-              <TextSubtitleContent >
-                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquipconsequat.
-              </TextSubtitleContent>
-              <TetxtParagraph>
-                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo velit esse molestie consequat quis nostrud exerci tation ullamcorper.
-              </TetxtParagraph>
+      <div id="section9" class="sections" ref="section9" >
+          <div class="padding-block">
+              <div class="left">
+                <TextTitleContent >
+                  Digital Branding
+                </TextTitleContent>
+                <TextSubtitleContent >
+                  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquipconsequat.
+                </TextSubtitleContent>
+                <TetxtParagraph>
+                  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo velit esse molestie consequat quis nostrud exerci tation ullamcorper.
+                </TetxtParagraph>
+              </div>
+          </div>
+          <div class="padding-block pr">
+            <div class="columns mb">
+              <div class="col">
+                  <TextSubtitleContent cs-style="color:#B38A58;">
+                    <strong>Step 1</strong>
+                  </TextSubtitleContent>
+                  <ImageResponsive source="boceto1.jpg"/>
+              </div>
+              <div class="col" style="padding-left:50px">
+                  <TextSubtitleContent cs-style="color:#B38A58;">
+                    <strong>Step 2</strong>
+                  </TextSubtitleContent>
+                  <ImageResponsive source="boceto2.jpg"/>
+              </div>
             </div>
-        </div>
-        <div class="padding-block pr">
-           <div class="columns mb">
-             <div class="col">
+            <div style="display:flex; text-align:left; flex-direction:column">
                 <TextSubtitleContent cs-style="color:#B38A58;">
-                  <strong>Step 1</strong>
-                </TextSubtitleContent>
-                <ImageResponsive source="boceto1.jpg"/>
-             </div>
-             <div class="col" style="padding-left:50px">
-                <TextSubtitleContent cs-style="color:#B38A58;">
-                  <strong>Step 2</strong>
-                </TextSubtitleContent>
-                <ImageResponsive source="boceto2.jpg"/>
-             </div>
-           </div>
-           <div style="display:flex; text-align:left; flex-direction:column">
-              <TextSubtitleContent cs-style="color:#B38A58;">
-                  <strong>Step 3</strong>
-                </TextSubtitleContent>
-                <ImageResponsive source="boceto3.png"/>
-           </div>
-        </div>
-    </div>
+                    <strong>Step 3</strong>
+                  </TextSubtitleContent>
+                  <ImageResponsive source="boceto3.png"/>
+            </div>
+          </div>
+      </div>
+     </div>
     <div id="section10" class="sections " ref="section10" style="background-color:#DBDBDB">
         <div class="padding-block pr">
             <WolaCite author="Maira Graff." role="Diseñadora" blue="true">
@@ -242,12 +245,15 @@
 export default {
   methods:{
     scrollToContent(){
-      console.log(jQuery)
       let target = this.$refs['section2'];
       let top  = target.offsetTop;
       jQuery("html, body").animate({ scrollTop: top });
       //window.scrollTo(0, top);
 
+    },
+    getHeightWrapper(wrapper){
+      let target = this.$refs[wrapper];
+      return target.clientHeight
     }
   }
 }
