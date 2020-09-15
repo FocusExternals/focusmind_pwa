@@ -21,6 +21,10 @@
 
         color: #7A7992;
     }
+
+    a{
+        font-weight: 700;
+    }
     
     a.hover::after{
         content: " ";

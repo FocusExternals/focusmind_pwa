@@ -10,12 +10,14 @@
     .wrapper{
         position:absolute;
         height: 100%;
-        width:250px
+        width:250px;
+        left:0;
     }
     div.stick-container{
         position: -webkit-sticky; /* Required for Safari */
         position: sticky;
         margin-top:167px;
+        z-index: -1;
         top:155px;
         margin-left:-75px;
         width:auto;
@@ -33,6 +35,10 @@
 
         opacity: 0.6;
         transform: rotate(-90deg);
+    }
+
+    .sticky-wrapper:hover div.stick-container{
+        opacity: 1;
     }
 </style>
 

@@ -85,8 +85,8 @@
         </div>
       </div>
      </div>
-     <div ref="wrapper-objetives">
-       <WolaSticky :height-wrapper="getHeightWrapper('wrapper-objetives')">Definición de objetivos</WolaSticky>
+     <div ref="wrapperObjetives" class="sticky-wrapper">
+       <WolaSticky :height-wrapper="heights.wrapperObjetives">Definición de objetivos</WolaSticky>
       <div id="section4" class="sections" ref="section4">
         <div class="padding-block left" >
           <div class="mb">
@@ -116,8 +116,8 @@
       
       </div>
      </div>
-     <div ref="wrapper-branding">
-      <WolaSticky :height-wrapper="getHeightWrapper('wrapper-branding')">Branding</WolaSticky>
+     <div ref="wrapperBranding" class="sticky-wrapper">
+      <WolaSticky :height-wrapper="heights.wrapperBranding">Branding</WolaSticky>
       <div id="section5" class="sections" ref="section5">
         <div class="padding-block" >
           <div class="mb left">
@@ -243,6 +243,14 @@
 
 <script>
 export default {
+  mounted(){  
+    console.log('MOunted')
+      Object.keys(this.$refs).forEach(element => {
+        let target = this.$refs[element];
+        this.heights[element] = (target)?target.clientHeight:400;
+      });
+    console.log(this.heights)
+  },
   methods:{
     scrollToContent(){
       let target = this.$refs['section2'];
@@ -251,9 +259,19 @@ export default {
       //window.scrollTo(0, top);
 
     },
+
+    
     getHeightWrapper(wrapper){
       let target = this.$refs[wrapper];
-      return target.clientHeight
+      return (target)?target.clientHeight:400;
+    }
+  },
+  data(){
+    return {
+      heights:{
+        wrapperBranding:400,
+        wrapperObjetives:400,
+      }
     }
   }
 }
