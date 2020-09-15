@@ -8,12 +8,36 @@
                     </span>
                 </button>
             </div>
-            <brandLogo>
+            <div class="brandLogo">
                 <img src="https://focusmind.net/wp-content/themes/focusmind/images/prelogo.png"/>
-            </brandLogo>
+            </div>
         </div>
     </nav>
 </template>
+
+
+<style scoped>
+    @import '~/assets/css/hamburguer-menu.css';
+    .menu-content{
+        width:100%;
+        height: 60px;
+        padding-right: 40px;
+        background-color: #03002b;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-container{
+        width: 155px;
+        display: flex;
+        justify-content: center;
+        background-color: #080057;
+    }
+
+    .brandLogo{
+        padding-left: 40px;
+    }
+</style>
 
 <script>
 export default {
@@ -25,25 +49,3 @@ export default {
    }
 }
 </script>
-<style scoped>
-    @import '~/assets/css/hamburguer-menu.css';
-    .menu-content{
-        width:100vw;
-        height: 60px;
-        padding-right: 40px;
-        background-color: #03002b;
-        display: flex;
-        align-items: center;
-    }
-
-    .btn-container{
-        width: 160px;
-        display: flex;
-        justify-content: center;
-        background-color: #080057;
-    }
-
-    brandLogo{
-        padding-left: 40px;
-    }
-</style>

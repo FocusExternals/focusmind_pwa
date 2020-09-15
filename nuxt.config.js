@@ -23,14 +23,24 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&display=swap'
+      }
       
+    ],
+    script: [
+      {
+        src: "https://code.jquery.com/jquery-3.5.1.min.js",
+        type: "text/javascript"
+      },
     ]
   },
   /*
   ** Global CSS
   */
   css: [
-    //'~/assets/css/header.css'
+    '~/assets/css/fonts.css'
   ],
   /*
   ** Plugins to load before mounting the App
