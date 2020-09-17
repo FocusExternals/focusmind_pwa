@@ -1,5 +1,5 @@
 <template>
-    <span :style="{fontSize:size+'px'}">
+    <span :style="{fontSize:size+'px',lineHeight:lh+'%',paddingBottom:pb+'px'}">
         <slot></slot>
     </span>
 </template>
@@ -9,7 +9,6 @@
         font-family: Mont;
         font-style: normal;
         font-weight: 800;
-        line-height: 121%;
         /* or 121% */
         letter-spacing: -0.02em;
         color: #B38A58;
@@ -28,6 +27,14 @@ export default {
             type:Number,
             default:20
         },
+        lh:{
+            type:Number,
+            default:121
+        },
+        pb:{
+            type:Number,
+            default:0
+        }
     }
 }
 </script>

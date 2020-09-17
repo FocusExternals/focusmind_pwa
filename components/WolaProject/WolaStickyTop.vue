@@ -72,7 +72,7 @@
     }
     .stick-item{
         max-width:363px;
-        opacity:1;
+        opacity:.6;
         display: flex;
     }
 
@@ -82,16 +82,11 @@
         flex-direction: column;
 
     }
-
-    :not( .wire.in-viewport) .paper-step{
-        opacity: .6;
-    }
-
     .arrow{
         margin-left:24px;
     }
     .sticky-wrapper.in-viewport div.stick-container{
-        opacity: 1;
+        opacity: .6;
     }
 </style>
 

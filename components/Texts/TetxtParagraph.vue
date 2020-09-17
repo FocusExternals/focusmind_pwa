@@ -1,5 +1,5 @@
 <template>
-    <p :style="{'fontSize':size+'px'}" >
+    <p :style="{'fontSize':size+'px',lineHeight:lh+'%'}" >
         <span class="dot" v-if="itemIcon">{{itemIcon}}</span>  
         <span :class="{'with-padding':btn}">
             <slot>
@@ -46,6 +46,10 @@ export default {
         },
         'item-icon':{
             default:false
+        },
+        'lh':{
+            type:Number,
+            default:170
         }
     }
 }

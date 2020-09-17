@@ -25,6 +25,7 @@
     }
     p.author{
         font-size: 21px;
+        font-family:Judson;
         line-height: 29px;
         /* or 138% */
         text-align: center;

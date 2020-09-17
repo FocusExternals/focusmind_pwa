@@ -14,6 +14,9 @@
         letter-spacing: -0.01em;
         color: #FFFFFF;
     }
+    span:hover svg{
+        transform: translateY(5px);
+    }
 </style>
 <script>
 export default {

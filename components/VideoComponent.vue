@@ -1,5 +1,5 @@
 <template>
-    <video  :poster="require('~/assets/images/'+poster)" controls :style="{height:h+'px'}">
+    <video  :poster="require('~/assets/images/'+poster)" autoplay loop muted :style="{height:h+'px'}">
         <source v-for="(source, ext) in sources" :key="ext" :src="require('~/assets/video/'+source)" :type="'video/'+ext"/>
     </video>
 

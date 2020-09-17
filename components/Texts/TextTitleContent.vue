@@ -19,6 +19,10 @@
         color: #03002B;
     }
 
+    h2.underline{
+        margin-bottom: 48px;
+    }
+
     .b-margin{
         margin-bottom: 0px;
     }
@@ -29,7 +33,7 @@
         /* position: absolute; */
         bottom: 0;
         margin-left: 2px;
-        margin-top: 8px;
+        margin-top: 19px;
         width: 28px;
         height: 4px;
         background-color: #03002B;

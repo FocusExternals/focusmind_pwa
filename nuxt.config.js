@@ -47,7 +47,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '~/plugins/directives.client.js'
+    {src:'~/plugins/directives.client.js'},
+    {src:'~/plugins/directives.nossr.js',ssr: false},
   ],
   /*
   ** Auto import components
