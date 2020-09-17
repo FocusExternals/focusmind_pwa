@@ -1,7 +1,8 @@
 <template>
-    <h2 :class="{'b-margin':noMargin}">
+    <h2 :class="{'b-margin':noMargin,'underline':underline}">
         <slot></slot>
     </h2>
+    
 </template>
 
 <style scoped>
@@ -21,11 +22,23 @@
     .b-margin{
         margin-bottom: 0px;
     }
+
+    h2.underline::after{
+        content: " ";
+        display: block;
+        /* position: absolute; */
+        bottom: 0;
+        margin-left: 2px;
+        margin-top: 8px;
+        width: 28px;
+        height: 4px;
+        background-color: #03002B;
+    }
     
 </style>
 
 <script>
 export default {
-    props : ['no-margin']
+    props :['no-margin','underline']
 }
 </script>

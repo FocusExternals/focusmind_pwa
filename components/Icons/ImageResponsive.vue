@@ -1,5 +1,5 @@
 <template>
-    <img :src="require('~/assets/images/'+source)"/>
+    <img :class="{'circle':circle}"  :src="require('~/assets/images/'+source)"/>
 </template>
 
 <style scoped>
@@ -7,10 +7,14 @@
         width:100%;
         height: auto;
     }
+
+    .circle{
+        border-radius: 50%;
+    }
 </style>
 
 <script>
 export default {
-    props:['source']
+    props:['source','circle']
 }
 </script>

@@ -37,7 +37,7 @@
         transform: rotate(-90deg);
     }
 
-    .sticky-wrapper:hover div.stick-container{
+    .sticky-wrapper.in-viewport div.stick-container{
         opacity: 1;
     }
 </style>

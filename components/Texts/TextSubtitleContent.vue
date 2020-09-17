@@ -16,7 +16,7 @@ export default {
         font-style: normal;
         font-weight: 700;
         font-size: 23px;
-        line-height: 39px;
+        line-height: 170%;
         /* or 170% */
         margin-bottom: 20px;
 
