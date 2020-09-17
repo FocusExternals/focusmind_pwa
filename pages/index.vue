@@ -2,6 +2,9 @@
   <div class="container">
     <BreadCrumbs/>
     <div id="section1" class="sections">
+      <div :style="{position:'absolute',right:'142px', top:'90px'}">
+        <LinkButton to="https://focusmind.net/contacto">HABLEMOS DE TU PROYECTO</LinkButton>
+      </div>
       <div class="left">  
         <Logo/>
         <HeadMainText>Desarrollando la plataforma líder de hispanoamérica en negocios y emprendimiento</HeadMainText>
@@ -583,7 +586,7 @@
         </div>
       </div>
       <div class="sections" id="section17">
-        <div class="padding-block pr">
+        <div class="padding-block pr full-width">
           <div class="columns mb" style="justify-content:space-evenly">
             <div class="col flex-column">
               
@@ -678,19 +681,6 @@
         </div>
       </div>
       <div class="sections" id="section18">
-        <div class="padding-block left">
-          <TextTitleContent underline="true">
-            User Flow
-          </TextTitleContent>
-          <TextSubtitleContent >
-            Selección de features.
-          </TextSubtitleContent>
-          <TetxtParagraph>
-            Debido a que este es un MVP se hicieron una selección de las funciones primarios o primordiales para poder desarrollarse en esta primera instancia del producto y realizar el user flow.
-          </TetxtParagraph>
-        </div>
-      </div>
-      <div class="sections" id="section19">
         <div class="padding-block left">
           <TextTitleContent underline="true">
             User Flow

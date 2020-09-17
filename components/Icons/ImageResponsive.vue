@@ -1,5 +1,5 @@
 <template>
-    <img :class="{'circle':circle}"  :src="require('~/assets/images/'+source)"/>
+    <img :class="{'circle':circle}"  v-lazy="require('~/assets/images/'+source)"/>
 </template>
 
 <style scoped>

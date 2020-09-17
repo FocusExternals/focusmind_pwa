@@ -2,6 +2,7 @@
   <div>
     <Menu />
     <Nuxt />
+    <LinkToTop/>
   </div>
 </template>
 
