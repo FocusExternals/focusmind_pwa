@@ -189,6 +189,17 @@
 
         </div>
         <div class="padding-block pr">
+          <client-only placeholder="Loading...">
+          <VueSlickCarousel>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <!-- <ImageResponsive source="Crehana.jpg"/>
+            <ImageResponsive source="Coursera.jpg"/> -->
+          </VueSlickCarousel>
+          </client-only>
+        </div>
+        <div class="padding-block pr">
           <WolaCiteSimple  v-scroll-reveal>
             Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquipconsequat.
           </WolaCiteSimple>
