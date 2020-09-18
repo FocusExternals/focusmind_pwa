@@ -5,7 +5,7 @@
       <div :style="{position:'fixed',right:'142px', top:'90px',zIndex:'3'}">
         <LinkButton to="https://focusmind.net/contacto">HABLEMOS DE TU PROYECTO</LinkButton>
       </div>
-      <div class="left">  
+      <div v-cloak class="left">  
         <Logo/>
         <HeadMainText v-scroll-reveal>Desarrollando la plataforma líder de hispanoamérica en negocios y emprendimiento</HeadMainText>
         <TextSubtitleContent v-scroll-reveal cs-style="color:#e0e0e0">MVP Responsive Website</TextSubtitleContent>
@@ -188,16 +188,13 @@
           </TetxtParagraph>
 
         </div>
-        <div class="padding-block pr">
-          <client-only placeholder="Loading...">
-          <VueSlickCarousel>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <!-- <ImageResponsive source="Crehana.jpg"/>
-            <ImageResponsive source="Coursera.jpg"/> -->
+        <div class="padding-block pr full-width">
+          <!-- <client-only placeholder="Loading..."> -->
+          <VueSlickCarousel :arrows="true">
+            <ImageResponsive :lazy="false" source="Crehana.jpg"/>
+            <ImageResponsive :lazy="false" source="Coursera.jpg"/>
           </VueSlickCarousel>
-          </client-only>
+          <!-- </client-only> -->
         </div>
         <div class="padding-block pr">
           <WolaCiteSimple  v-scroll-reveal>
@@ -959,7 +956,12 @@
 </template>
 
 <script>
+import VueSlickCarousel from 'vue-slick-carousel'
+  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+  // optional style for arrows & dots
+  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
+  components: { VueSlickCarousel },
   mounted(){  
     const instancia = this;
     setTimeout(function(){
@@ -1169,6 +1171,10 @@ export default {
     top: -64px;
     background-repeat: no-repeat;
     background-position-x: center;
+}
+
+[v-cloak]{
+  visibility:hidden;
 }
 
 </style>
