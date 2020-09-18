@@ -48,7 +48,7 @@ export default {
   */
   plugins: [
     {src:'~/plugins/directives.client.js'},
-    {src:'~/plugins/directives.nossr.js',ssr: false},
+    {src:'~/plugins/directives.nossr.js',ssr: false, mode:'client'},
   ],
   /*
   ** Auto import components

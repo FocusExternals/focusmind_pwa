@@ -190,6 +190,8 @@
           </TetxtParagraph>
 
         </div>
+        <div class="padding-block pr full-width">
+        </div>
         <div class="padding-block pr">
           <WolaCiteSimple  v-scroll-reveal>
             Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquipconsequat.
@@ -950,7 +952,12 @@
 </template>
 
 <script>
+import VueSlickCarousel from 'vue-slick-carousel'
+  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+  // optional style for arrows & dots
+  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
+  components: { VueSlickCarousel },
   mounted(){  
      window.addEventListener('load', () => {
          this.loaded = true;
@@ -1180,5 +1187,9 @@ export default {
   top:90px
 }
 
+
+[v-cloak]{
+  visibility:hidden;
+}
 
 </style>
