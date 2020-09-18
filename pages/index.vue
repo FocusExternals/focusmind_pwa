@@ -1,12 +1,14 @@
 <template>
   <div class="container">
     <BreadCrumbs/>
-    <div id="section1" class="sections">
-      <div :style="{position:'fixed',right:'142px', top:'90px',zIndex:'3'}">
+    <div v-in-viewport id="section1" class="sections">
+      <div class="talk-us">
         <LinkButton to="https://focusmind.net/contacto">HABLEMOS DE TU PROYECTO</LinkButton>
       </div>
-      <div class="left">  
+      <div v-show="loaded" class="left">
+        <template v-scroll-reveal>  
         <Logo/>
+        </template>
         <HeadMainText v-scroll-reveal>Desarrollando la plataforma líder de hispanoamérica en negocios y emprendimiento</HeadMainText>
         <TextSubtitleContent v-scroll-reveal cs-style="color:#e0e0e0">MVP Responsive Website</TextSubtitleContent>
         <div class="linkToBottomContainer">
@@ -775,7 +777,7 @@
         </div>
         
         <div class="padding-block full-width pr wire" id="wired" v-in-viewport>
-          <ImageResponsive :lazy="false" source="grafico.png"/>
+          <ImageResponsive :lazy="false" source="lo-fi.jpg"/>
         </div>
         <div class="padding-block full-width pr mid" id="midle" v-in-viewport>
           <ImageResponsive :lazy="false" source="Mediawire.png"/>
@@ -817,7 +819,7 @@
               <strong>Duis autem vel eum iriure</strong> dolor in hendrerit in vulputate velit esse molestie consequat el illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dig.
             </TetxtParagraph>
           </div>
-          <div v-scroll-reveal="{delay:500}" class="pl">
+          <div v-scroll-reveal class="pl">
             <ImageResponsive source="compu.jpg"/>
           </div>
           
@@ -950,6 +952,9 @@
 <script>
 export default {
   mounted(){  
+     window.addEventListener('load', () => {
+         this.loaded = true;
+    })
     const instancia = this;
     setTimeout(function(){
       Object.keys(instancia.$refs).forEach(element => {
@@ -976,6 +981,7 @@ export default {
   },
   data(){
     return {
+      loaded:false,
       heights:{
         wrapperBranding:400,
         wrapperObjetives:400,
@@ -1139,12 +1145,15 @@ export default {
 
 #wired.in-viewport ~ .wrapper .paper-step{
   opacity: 1;
+  transform: translateY(15px);
 }
 #midle.in-viewport ~ .wrapper .mid-step{
   opacity: 1;
+  transform: translateY(15px);
 }
 #hifi.in-viewport ~ .wrapper .hi-step{
   opacity: 1;
+  transform: translateY(15px);
 }
 .sticky-wrapper{
   max-width: 100% ;
@@ -1159,5 +1168,17 @@ export default {
     background-repeat: no-repeat;
     background-position-x: center;
 }
+.talk-us{
+  position:fixed;
+  right:142px;
+  top:25px;
+  z-index:3;
+  transition:all .5s ease
+}
+
+#section1.in-viewport .talk-us{
+  top:90px
+}
+
 
 </style>

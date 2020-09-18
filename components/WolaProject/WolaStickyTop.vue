@@ -56,11 +56,11 @@
         position: -webkit-sticky; /* Required for Safari */
         position: sticky;
         width:100%;
-        height: 185px;
         top:0px;
         justify-content: space-between;
         padding-left: 155px;
         padding-right: 195px;
+        box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.06);
     }
     .stick-top-wrapper{
         
@@ -68,10 +68,12 @@
         width:100%;
         background-color: #fff;
         justify-content: space-around;
-
+        padding-top: 32px;
+        padding-bottom: 55px;
     }
     .stick-item{
         max-width:363px;
+        height: 98px;
         opacity:.6;
         display: flex;
     }

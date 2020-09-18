@@ -1,5 +1,5 @@
 <template>
-    <button v-on:click="scrollTop()">
+    <button v-if="!hide" v-on:click="scrollTop()">
         <IconArrowUpSimple/>
     </button>
 </template>
@@ -21,6 +21,7 @@
         background-color: #03002B;
         color: #FFFFFF;
         cursor: pointer;
+        transition: all .5s ease
     }
     button:active, button:focus{
         border:none;
@@ -30,9 +31,25 @@
 
 <script>
 export default {
+    mounted(){
+        const component = this
+        jQuery(window).on('scroll',function(e){
+            if(($(window).scrollTop() + $(window).height() > $(document).height() - 100) || $(window).scrollTop() <  100) {
+                
+                component.hide = true
+            }else{
+                component.hide = false
+            }
+        })
+    },
     methods:{
         scrollTop(){
             jQuery("html, body").animate({ scrollTop: 0 });
+        }
+    },
+    data(){
+        return {
+            hide:true
         }
     }
 }
