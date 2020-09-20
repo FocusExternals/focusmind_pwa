@@ -57,14 +57,16 @@
 }
 
 @font-face {
-    font-family: MontHeavy;
+    font-family: Mont;
     font-style: normal;
+    
+    font-weight: 1000;
     src: url("../fonts/Mont-Heavy.otf") format("opentype");
     font-display: fallback;
 }
 
 @font-face {
-    font-family: MontHeavy;
+    font-family: Mont;
     font-style: italic;
     src: url("../fonts/Mont-Heavy-Italic.otf") format("opentype");
     font-display: fallback;

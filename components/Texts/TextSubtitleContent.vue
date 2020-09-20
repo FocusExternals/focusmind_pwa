@@ -27,4 +27,9 @@ export default {
     span strong{
         font-weight: 800;
     }
+    pre{
+        font-family: Mont;
+        font-weight: 700;
+        font-style: normal;
+    }
 </style>

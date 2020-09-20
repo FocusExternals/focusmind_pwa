@@ -1,7 +1,7 @@
 <template>
 
-    <img v-if="lazy" :class="{'circle':circle}"  v-lazy="require('~/assets/images/'+source)"/>
-    <img v-else :class="{'circle':circle}"  :src="require('~/assets/images/'+source)"/>
+    <!-- <img v-if="lazy" :class="{'circle':circle}"  v-lazy="require('~/assets/images/'+source)"/> -->
+    <img :class="{'circle':circle}"  :src="require('~/assets/images/'+source)"/>
 
 </template>
 

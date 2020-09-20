@@ -1,5 +1,5 @@
 <template>
-    <span :style="{fontSize:size+'px',lineHeight:lh+'%',paddingBottom:pb+'px'}">
+    <span :style="{fontSize:size+'px',lineHeight:lh+'%',paddingBottom:pb+'px',fontWeight:w}">
         <slot></slot>
     </span>
 </template>
@@ -34,6 +34,10 @@ export default {
         pb:{
             type:Number,
             default:0
+        },
+        w:{
+            type:Number,
+            default:800
         }
     }
 }

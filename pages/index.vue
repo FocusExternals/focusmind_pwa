@@ -2,8 +2,8 @@
   <div class="container">
     <BreadCrumbs/>
     <div v-in-viewport id="section1" class="sections">
-      <div class="talk-us">
-        <LinkButton to="https://focusmind.net/contacto">HABLEMOS DE TU PROYECTO</LinkButton>
+      <div v-show="loaded" :class="{'talk-us':true,'hidden':!talk}">
+        <LinkButton to="https://focusmind.net/contacto/#Gocontainer" :target="'_blank'">HABLEMOS DE TU PROYECTO</LinkButton>
       </div>
       <div v-show="loaded" class="left">
         <template v-scroll-reveal>  
@@ -32,7 +32,7 @@
     </div>
      <div id="section3" class="sections degrade pr" ref="section3">
       
-      <div  class="padding-block left">
+      <div v-scroll-reveal  class="padding-block left">
         <TextTitleContent no-margin="true">
           Scope de trabajo
         </TextTitleContent>
@@ -79,9 +79,11 @@
         <div v-scroll-reveal="{delay:1000}" class="col">
           <div class="mb">
             <TextSubtitleContent >
-              <strong>Duración del proyecto</strong><br>
-              2 meses<br>
+              <strong>Duración del proyecto</strong>
             </TextSubtitleContent>
+            <TetxtParagraph>
+              3 sprints
+            </TetxtParagraph>
           </div>
           <div class="mb">
             <TextSubtitleContent>
@@ -125,8 +127,8 @@
 
         </div>
         <div class="pr flex-center flex-column pl" >
-          <ImageResponsive :style="{marginBottom:'23px'}" source="image1.jpg"/>
-          <ImageResponsive source="image2.jpg"/>
+          <ImageResponsive v-scroll-reveal="{origin:'top'}" :style="{marginBottom:'23px'}" source="image1.jpg"/>
+          <ImageResponsive v-scroll-reveal="{delay:250,origin:'top'}" source="image2.jpg"/>
           
         </div>
       
@@ -190,7 +192,8 @@
           </TetxtParagraph>
 
         </div>
-        <div class="padding-block pr full-width">
+        <div class="padding-block full-width">
+          <CarouselComponent :images="imagesSlide" />
         </div>
         <div class="padding-block pr">
           <WolaCiteSimple  v-scroll-reveal>
@@ -228,14 +231,14 @@
                   </TextSubtitleContent>
                   <ImageResponsive source="boceto1.jpg"/>
               </div>
-              <div v-scroll-reveal="{delay:500}" class="col" style="padding-left:50px">
+              <div v-scroll-reveal="{delay:250,origin:'top'}" class="col" style="padding-left:50px">
                   <TextSubtitleContent cs-style="color:#B38A58;">
                     <strong>Step 2</strong>
                   </TextSubtitleContent>
                   <ImageResponsive source="boceto2.jpg"/>
               </div>
             </div>
-            <div v-scroll-reveal="{delay:1000}" style="display:flex; text-align:left; flex-direction:column">
+            <div v-scroll-reveal="{delay:500}" style="display:flex; text-align:left; flex-direction:column">
                 <TextSubtitleContent cs-style="color:#B38A58;">
                   <strong>Step 3</strong>
                 </TextSubtitleContent>
@@ -267,7 +270,7 @@
               </TetxtParagraph>
             </div>
             <div class="pl">
-              <ImageResponsive source="DigitalBranding.jpg"/>
+              <ImageResponsive :lazy="false"  v-scroll-reveal="{origin: 'top'}" source="DigitalBranding.jpg"/>
             </div>
           </div>
           
@@ -295,7 +298,7 @@
         </div>
         <div class="columns full-width mb">
           <div class="flex-important">
-            <ImageResponsive source="Crehana.jpg"/>
+            <ImageResponsive :lazy="false"  v-scroll-reveal="{origin: 'top'}" source="Crehana.jpg"/>
           </div>
           <div v-scroll-reveal class="flex-center flex-column pl pr">
              <WolaTextGold :size="20" :pb="31">
@@ -331,12 +334,12 @@
 
           </div>
            <div class="flex-important pr pl">
-            <ImageResponsive source="Domestika.jpg"/>
+            <ImageResponsive :lazy="false"  v-scroll-reveal="{origin: 'top'}" source="Domestika.jpg"/>
           </div>
         </div>
         <div class="columns full-width mb">
           <div class="flex-important">
-            <ImageResponsive source="Coursera.jpg"/>
+            <ImageResponsive :lazy="false"  v-scroll-reveal="{origin: 'top'}" source="Coursera.jpg"/>
           </div>
           <div v-scroll-reveal class="flex-center flex-column pl pr">
              <WolaTextGold :size="20" :pb="31">
@@ -368,7 +371,7 @@
             <TetxtParagraph :size="20"><strong>4.</strong> Diseño sútil y claro</TetxtParagraph>
           </div>
            <div class="flex-important pr pl">
-            <ImageResponsive source="Google.jpg"/>
+            <ImageResponsive :lazy="false"  v-scroll-reveal="{origin: 'top'}" source="Google.jpg"/>
           </div>
         </div>
         <div class="padding-block left">
@@ -414,7 +417,7 @@
                   </TetxtParagraph> 
                 </div>
               </div>
-              <div v-scroll-reveal="{delay:500}" class="col" style="padding-left:50px">
+              <div v-scroll-reveal="{delay:250}" class="col" style="padding-left:50px">
                 <div class="mb">
                   <TextRegularContent cs-style="color:#B38A58; font-size:18px;">
                     <strong>2° perfil</strong>
@@ -443,7 +446,7 @@
                   </TetxtParagraph> 
                 </div>
               </div>
-              <div v-scroll-reveal="{delay:1000}" class="col" style="padding-left:50px">
+              <div v-scroll-reveal="{delay:500}" class="col" style="padding-left:50px">
                 <div class="mb">
                   <TextRegularContent cs-style="color:#B38A58; font-size:18px;">
                     <strong>3° perfil</strong>
@@ -475,7 +478,7 @@
             </div>
         </div>
       </div>
-      <div class="sections mb" id="section15" style="background-color:#DBDBDB;">
+      <div v-scroll-reveal class="sections mb" id="section15" style="background-color:#DBDBDB;">
         <div class="padding-block pr">
           <WolaTextGold :size="33">
             A través del análisis de los distintos perfiles logramos entender sus <em>puntos de dolor.</em>
@@ -484,7 +487,7 @@
       </div>
       <div class="sections wrap-on" id="section15">
         <div class="full-width pr" style="margin-bottom:2px; z-index:1">
-          <WolaPainPoints :style="{maxWidth:'70%'}"/>
+          <WolaPainPoints v-scroll-reveal="{origin:'top'}" :style="{maxWidth:'70%'}"/>
         </div>
         <div class="pr full-width">
             <div class="columns mb" style="justify-content:space-evenly">
@@ -522,7 +525,7 @@
                     Falta de feedback de un profesor
                 </TetxtParagraph>
               </div>
-              <div v-scroll-reveal="{delay:500}" class="col" style="padding-left:50px">
+              <div v-scroll-reveal="{delay:250}" class="col" style="padding-left:50px">
                 <div class="full-width align-center mb">
                   <TetxtParagraph :size="20" :btn="true">
                     <strong>Emprendedor</strong>
@@ -556,7 +559,7 @@
                     Falta de feedback de un profesor
                 </TetxtParagraph>
               </div>
-              <div v-scroll-reveal="{delay:1000}" class="col" style="padding-left:50px">
+              <div v-scroll-reveal="{delay:500}" class="col" style="padding-left:50px">
                 <div class="full-width align-center mb">
                   <TetxtParagraph :size="20" :btn="true">
                     <strong>Emprendedor</strong>
@@ -637,7 +640,7 @@
                   <IconCheck/> Falta de feedback de un profesor
               </TetxtParagraph>
             </div>
-            <div v-scroll-reveal="{delay:500}" class="col must-given" style="padding-left:50px">
+            <div v-scroll-reveal="{delay:250}" class="col must-given" style="padding-left:50px">
               
               <TetxtParagraph :size="16">
                   <IconCheck/> Falta de tiempo y de recursos económicos
@@ -667,7 +670,7 @@
                   <IconCheck/> Falta de feedback de un profesor
               </TetxtParagraph>
             </div>
-            <div v-scroll-reveal="{delay:1000}" class="col must-given" style="padding-left:50px">
+            <div v-scroll-reveal="{delay:500}" class="col must-given" style="padding-left:50px">
               <TetxtParagraph :size="16">
                   <IconCheck/> Falta de tiempo y de recursos económicos
               </TetxtParagraph>
@@ -699,7 +702,7 @@
           </div>
         </div>
       </div>
-      <div class="sections" id="section18">
+      <div v-scroll-reveal class="sections" id="section18">
         <div class="padding-block left">
           <TextTitleContent underline="true">
             User Flow
@@ -725,7 +728,7 @@
               detallada del curso
             </TetxtParagraph>
           </div>
-          <div v-scroll-reveal="{delay:500}" class="col-feature flex-column align-center" :style="{width:'186px'}">
+          <div v-scroll-reveal="{delay:250}" class="col-feature flex-column align-center" :style="{width:'186px'}">
             
             <ImageResponsive source="feature2.png" :style="{maxWidth:'134px',paddingBottom:'24px'}"/>
             <TetxtParagraph :size="21" :lh="133" class="align-center">
@@ -734,7 +737,7 @@
               y módulos de estudio
             </TetxtParagraph>
           </div>
-          <div v-scroll-reveal="{delay:1000}" class="col-feature flex-column align-center" :style="{width:'186px'}">
+          <div v-scroll-reveal="{delay:500}" class="col-feature flex-column align-center" :style="{width:'186px'}">
             <ImageResponsive source="feature3.png" :style="{maxWidth:'134px',paddingBottom:'24px'}"/>
             <TetxtParagraph :size="21" :lh="133" class="align-center">
               Perfil con listado
@@ -742,7 +745,7 @@
               su estado
             </TetxtParagraph>
           </div>
-          <div v-scroll-reveal="{delay:1500}" class="col-feature flex-column align-center" :style="{width:'186px'}">
+          <div v-scroll-reveal="{delay:750}" class="col-feature flex-column align-center" :style="{width:'186px'}">
             <ImageResponsive source="feature4.png" :style="{maxWidth:'134px',paddingBottom:'24px'}"/>
             <TetxtParagraph :size="21" :lh="133" class="align-center">
               Checkout con
@@ -752,13 +755,13 @@
         </div>
       </div>
       <div class="sections pr" id="section21">
-        <div class="padding-block full-width">
+        <div v-scroll-reveal="{origin:'top'}" class="padding-block full-width">
           <ImageResponsive source="grafico.png"/>
         </div>
       </div>
-      <div class="sections" id="section22">
+      <div v-scroll-reveal class="sections" id="section22">
         
-        <div v-scroll-reveal class="padding-block left">
+        <div class="padding-block left">
           <TextTitleContent underline="true">
             Wireframings
           </TextTitleContent>
@@ -769,7 +772,7 @@
       </div>
       <div class="sections wrap-on" id="section23" ref="section23">
         
-        <div class="padding-block left" :style="{marginTop:'185px'}">
+        <div class="padding-block left" :style="{marginTop:'233px'}">
           <TextSubtitleContent>
             <strong>Mobile First</strong>
           </TextSubtitleContent>
@@ -778,13 +781,13 @@
           </TetxtParagraph>
         </div>
         
-        <div class="padding-block full-width pr wire" id="wired" v-in-viewport>
+        <div class="padding-block full-width pr wire-section" id="wired" v-in-viewport>
           <ImageResponsive :lazy="false" source="lo-fi.jpg"/>
         </div>
-        <div class="padding-block full-width pr mid" id="midle" v-in-viewport>
+        <div class="padding-block full-width pr wire-section" id="midle" v-in-viewport>
           <ImageResponsive :lazy="false" source="Mediawire.png"/>
         </div>
-        <div class="padding-block full-width pr hifi" id="hifi" v-in-viewport>
+        <div class="padding-block full-width pr wire-section" id="hifi" v-in-viewport>
           <ImageResponsive :lazy="false" source="Hi-fi.png"/>
         </div>
         <WolaStickyTop :height-wrapper="heights.section23"/>
@@ -809,7 +812,7 @@
       <div class="sections pr wrap-on" id="section26">
         
         <div class="padding-block full-width" :style="{display:'flex'}">
-          <div class="align" :style="{width:'50%'}">
+          <div v-scroll-reveal class="align" :style="{width:'50%'}">
             <TextTitleContent underline="true">
               Desarrollo y Q&amp;A
   
@@ -821,12 +824,12 @@
               <strong>Duis autem vel eum iriure</strong> dolor in hendrerit in vulputate velit esse molestie consequat el illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dig.
             </TetxtParagraph>
           </div>
-          <div v-scroll-reveal class="pl">
-            <ImageResponsive source="compu.jpg"/>
+          <div v-scroll-reveal="{origin:'top'}" class="pl">
+            <ImageResponsive :lazy="false" v-scroll-reveal="{origin:'top'}"  source="compu.jpg"/>
           </div>
           
         </div>
-        <div class="padding-block flex-center" :style="{display:'flex'}">
+        <div v-scroll-reveal class="padding-block flex-center" :style="{display:'flex'}">
           <TetxtParagraph>
             <strong>Tecnologías utilizadas:</strong>
           </TetxtParagraph>
@@ -838,7 +841,7 @@
         </div>
       </div>
       <div class="sections pr" id="sections27" :style="{backgroundColor:'#d1d1d1'}">
-        <div class="padding-block align-center">
+        <div v-scroll-reveal class="padding-block align-center">
           <TextSubtitleContent>
             Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquipconsequat.
           </TextSubtitleContent>
@@ -850,11 +853,11 @@
             <WolaTextGold :size="88">89%</WolaTextGold>
             <TetxtParagraph>Aceptación del producto</TetxtParagraph>
           </div>
-          <div v-scroll-reveal="{delay:500}" class="flex-column align-center">
+          <div v-scroll-reveal="{delay:250}" class="flex-column align-center">
             <WolaTextGold :size="88">1,5 seg</WolaTextGold>
             <TetxtParagraph>Carga mobile de la plataforma</TetxtParagraph>
           </div>
-          <div v-scroll-reveal="{delay:1000}" class="flex-column align-center">
+          <div v-scroll-reveal="{delay:500}" class="flex-column align-center">
             <WolaTextGold :size="88">2 min</WolaTextGold>
             <TetxtParagraph>Tiempo de navegación</TetxtParagraph>
           </div>
@@ -862,7 +865,7 @@
       </div>
     </div>
     <div class="sections pr flex-center" id="sections27" :style="{backgroundColor:'#f2f2f2',paddingTop:'24px',paddingBottom:'24px'}">
-      <div>
+      <div v-scroll-reveal="{origin:'top'}">
         <ImageResponsive source="ilustracionFinal.png"/>
       </div>
       <div v-scroll-reveal class="pl flex-column align">
@@ -885,13 +888,13 @@
             <TextSubtitleContent :size="18"><strong>Dolor sit amet</strong></TextSubtitleContent>
             <TetxtParagraph :size="18" class="mb">Product Manager</TetxtParagraph>
           </div>
-          <div v-scroll-reveal="{delay:500}" class="col">
+          <div v-scroll-reveal="{delay:250}" class="col">
             <TextSubtitleContent :size="18"><strong>Dolor sit ipsum</strong></TextSubtitleContent>
             <TetxtParagraph :size="18" class="mb">Developer</TetxtParagraph>
             <TextSubtitleContent :size="18"><strong>Lorem ipsum</strong></TextSubtitleContent>
             <TetxtParagraph :size="18" class="mb">Designer</TetxtParagraph>
           </div>
-          <div v-scroll-reveal="{delay:1000}" class="col">
+          <div v-scroll-reveal="{delay:500}" class="col">
             <TextSubtitleContent :size="18"><strong>Dolor sit amet</strong></TextSubtitleContent>
             <TetxtParagraph :size="18" class="mb">Developer</TetxtParagraph>
             <TextSubtitleContent :size="18"><strong>Lorem ipsum</strong></TextSubtitleContent>
@@ -900,42 +903,58 @@
         </div>
       </div>
     </div>
-    <div class="sections pr wrap-on" >
+    <div id="section30" class="sections pr wrap-on" >
       <div class="full-width align mb">
         <TextSubtitleContent><strong>Casos de éxito relacionados</strong></TextSubtitleContent>
       </div>
       <div class="columns">
-        <div class="col flex-column">
+        <div v-scroll-reveal="{origin:'top'}" class="col flex-column">
           <div>
             <ImageResponsive source="london.png"/>
           </div>
-          <div :style="{display:'flex',alignItems:'center'}">
-            <TextSubtitleContent size="19">
+          <div :style="{display:'flex',alignItems:'center',justifyContent:'space-between'}">
+            <TextSubtitleContent cs-style="font-size:17px">
               <strong>London Travel </strong><br>
               Estrategia Digital Global
             </TextSubtitleContent>
-            <LinkButton :style="{paddingLeft:'12px'}" variant="blue-inverted" to="https://focusmind.net/proyecto-london-travel-3-2/">VER CASO DE ÉXITO</LinkButton>
+            <LinkButton  :with-arrow="true" :style="{paddingLeft:'12px'}" variant="blue-inverted" to="https://focusmind.net/proyecto-london-travel-3-2/">VER CASO DE ÉXITO</LinkButton>
           </div>
 
         </div>
         
-        <div class="col flex-column" >
+        <div v-scroll-reveal="{origin:'top',delay:250}" class="col flex-column" >
           <div class="">
             <ImageResponsive source="chubut.png"/>
           </div>
-          <div :style="{display:'flex',alignItems:'center'}">
-            <TextSubtitleContent size="19">
+          <div :style="{display:'flex',alignItems:'center',justifyContent:'space-between'}">
+            <TextSubtitleContent cs-style="font-size:17px">
               <strong>Chubut Turismo </strong><br>
               App y sitio web interactivo 
             </TextSubtitleContent>
-            <LinkButton :style="{paddingLeft:'12px'}" variant="blue-inverted" to="https://focusmind.net/proyecto-chubut/">VER CASO DE ÉXITO</LinkButton>
+            <LinkButton :with-arrow="true" :style="{paddingLeft:'12px'}" variant="blue-inverted" to="https://focusmind.net/proyecto-chubut/">VER CASO DE ÉXITO</LinkButton>
           </div>
 
         </div>
       </div>
     </div>
-    <div class="sections pr" id="sections29" :style="{backgroundColor:'#03002B'}">
-      <div class="padding-block full-width flex-column flex-center" :style="{alignItems:'center'}">
+    <div ref="section30" class="know-more full-width"  v-on:mouseover="toogleBehance(true)" v-on:mouseleave="toogleBehance(false)">
+      <div class="align behance-flex">
+        <div :class="{'behance-on':showedBehance,'behance-icon':true}">
+          <a href="https://focusmind.net/casos-de-estudio/">
+          <ImageResponsive :lazy="false" source="mind-hover.png"/>
+          </a>
+        </div>
+        <div>
+          <TextHeavyContent style="white-space:pre">{{(showedBehance)?prefooter.on:prefooter.off}}</TextHeavyContent>
+        </div>
+      </div>
+      <div class="align link">
+        <LinkButton variant="pink-transparent" :with-arrow="true" to="https://focusmind.net/casos-de-estudio/">VER MAS</LinkButton>
+      </div>
+
+    </div>
+    <div class="sections pr footer" id="sections29" :style="{paddingRight:'60px',paddingLeft:'60px'}">
+      <div class="padding-block full-width flex-column flex-center" :style="{alignItems:'center',marginBottom:'14px'}">
         <div class="mb"  :style="{width:'249px'}">
           <ImageResponsive source="logo-footer.png"/>
         </div>
@@ -945,19 +964,30 @@
             DOING THINGS THAT MATTER SINCE 2014
           </TextRegularContent>
         </div>
+        <div class="full-width" :style="{display:'flex',flexDirection:'row-reverse'}">
+          <IconsSocial data-hover="Escucha nuestra música" to="https://open.spotify.com/user/21eoh7kmmqsoe3dp4gda2lcsi?si=yXXMs8YnQSKHU84e9D7piQ" icon="spotify"/>
+          <IconsSocial data-hover="Lo que hacemos en video" to="https://vimeo.com/focusmindmkt" icon="vimeo"/>
+          <IconsSocial data-hover="La vida en la agencia" to="https://www.instagram.com/focusmindmkt/" icon="instagram"/>
+          <IconsSocial data-hover="Seguinos en Facebook" to="https://www.facebook.com/focusmindco/" icon="facebook"/>
+          <IconsSocial data-hover="Nuestro Portfolio" to="https://www.behance.net/focusmind" icon="behance"/>
+          <IconsSocial data-hover="Conversá con Nosotros" to="https://twitter.com/focusmindmkt" icon="twitter"/>
+        </div>
       </div>
-     
     </div>
+    <div  v-on:click="scrollTop()" class="sections" :style="{paddingLeft:0}" id="sectionsArrowTop">
+      <div id="arrow-up" class="full-width">
+
+        <IconArrowUpSimple cs-style="width:36px;height:36px;"/>
+      </div>
+    </div>
+    
+   
   </div>
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-  // optional style for arrows & dots
-  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
 export default {
-  components: { VueSlickCarousel },
   mounted(){  
      window.addEventListener('load', () => {
          this.loaded = true;
@@ -968,33 +998,68 @@ export default {
         let target = instancia.$refs[element];
         instancia.heights[element] = (target)?target.clientHeight:400;
       });
-    },1000)
+    },1000);
+    
+    jQuery(window).on('scroll',function(e){
+      let target = instancia.$refs['section30'];
+      let top  = target.offsetTop;
+        if(($(window).scrollTop() + $(window).height()) > top) {
+            
+            instancia.talk = false
+        }else{
+            instancia.talk = true
+        }
+    })
       
   },
   methods:{
     scrollToContent(){
       let target = this.$refs['section2'];
       let top  = target.offsetTop;
-      jQuery("html, body").animate({ scrollTop: top });
+      jQuery("html, body").animate({ scrollTop: top },800);
       //window.scrollTo(0, top);
-
     },
-
+    scrollTop(){
+      jQuery("html, body").animate({ scrollTop: 0 });
+    },
     
     getHeightWrapper(wrapper){
       let target = this.$refs[wrapper];
       return (target)?target.clientHeight:400;
+    },
+    toogleBehance(active){
+      this.showedBehance = active
     }
   },
   data(){
     return {
       loaded:false,
+      showedBehance:false,
+      talk:true,
       heights:{
         wrapperBranding:400,
         wrapperObjetives:400,
         section23:400,
         wrapperTheMind:400
-      }
+      },
+      prefooter:{
+        on:'DESCUBRIR\nCASOS\nDE ESTUDIO.',
+        off:'CONOCÉ\nMÁS DE NUESTRO\nTRABAJO.'
+      },
+      imagesSlide:[
+        {
+          src:'slide1.jpg',
+          text:'Bocetado\nen papel'
+        },
+        {
+          src:'slide2.jpg',
+          text:'Exploración'
+        },
+        {
+          src:'slide3.png',
+          text:'Preselección'
+        }
+      ]
     }
   }
 }
@@ -1150,17 +1215,18 @@ export default {
   margin-left:52px;
 }
 
+.wire-section.in-viewport ~ .wrapper .stick-item {
+  opacity: .6;
+}
+
 #wired.in-viewport ~ .wrapper .paper-step{
   opacity: 1;
-  transform: translateY(15px);
 }
 #midle.in-viewport ~ .wrapper .mid-step{
   opacity: 1;
-  transform: translateY(15px);
 }
 #hifi.in-viewport ~ .wrapper .hi-step{
   opacity: 1;
-  transform: translateY(15px);
 }
 .sticky-wrapper{
   max-width: 100% ;
@@ -1187,9 +1253,57 @@ export default {
   top:90px
 }
 
-
-[v-cloak]{
-  visibility:hidden;
+.footer{
+  background-color:#03002B;
+  border-bottom: 4px solid #ff0564;
 }
+
+#arrow-up{
+  background-color:#03002B;
+  padding-top:15px;
+  padding-bottom:15px;
+  cursor:pointer;
+}
+
+#arrow-up:hover{
+  background-color: #ff0564;
+}
+
+.know-more{
+  width:100%;
+  padding:80px;
+  background-color: #efefef;
+  display: flex;
+  justify-content: center;
+}
+
+.know-more .link{
+  width:200px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.behance-flex{
+  display: flex;
+  align-items: center;
+  flex:1;
+}
+.behance-icon{
+  width: 0;
+  transition: all .4s ease-in-out;
+  
+}
+.behance-on{
+  width:281px;
+  padding: 0 90px;
+}
+
+.hidden{
+  top:-50px;
+}
+
+
 
 </style>

@@ -1,12 +1,15 @@
 <template>
-    <a :href="to">
-    <button :class="colors[variant]">
+    <a :href="to" >
+    <button v-on:mouseover="over=true" v-on:mouseleave="over=false" :class="colors[variant]">
         <slot></slot>
+        <IconArrowUpSimple  v-if="withArrow" cs-style="transform:rotate(90deg); height:.6em" :color="(over)?arrow_color[variant][1]:arrow_color[variant][0]"/>
     </button>
     </a>
 </template>
 
 <style scoped>
+
+
     a{
         text-decoration:none;
     }
@@ -40,6 +43,15 @@
     .theme-pink:hover {
         color: #ff0c62;
         
+    }
+
+    .theme-pink-inverted-transparent{
+        background: linear-gradient(90deg,#ff0c62 50%, transparent 0);
+        color: #ff0c62;
+        border:3px solid #ff0c62;
+    }
+    .theme-pink-inverted-transparent:hover {
+        color: #fff;
     }
 
     .theme-blue{
@@ -78,15 +90,28 @@ export default {
         'variant':{
             type:String,
             default:'pink'
+        },
+        'with-arrow':{
+            type:Boolean,
+            default:false
         }
     },
     data(){
         return {
+            over:false,
             colors:{
                 pink:"theme-pink",
                 'pink-inverted':'theme-pink-inverted',
                 blue:"theme-blue",
-                'blue-inverted':'theme-blue-inverted'
+                'blue-inverted':'theme-blue-inverted',
+                'pink-transparent':'theme-pink-inverted-transparent'
+            },
+            arrow_color:{
+                pink:['#fff','#ff0c62'],
+                'pink-inverted':['#ff0c62','#fff'],
+                blue:['#fff','#03002b'],
+                'blue-inverted':['#03002b','#fff'],
+                'pink-transparent':['#ff0c62','#fff'],
             }
         }
     }

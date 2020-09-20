@@ -60,6 +60,8 @@
         justify-content: space-between;
         padding-left: 155px;
         padding-right: 195px;
+        background-color: #fff;
+        z-index: 4;
         box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.06);
     }
     .stick-top-wrapper{
@@ -74,7 +76,7 @@
     .stick-item{
         max-width:363px;
         height: 98px;
-        opacity:.6;
+        opacity:1;
         display: flex;
     }
 

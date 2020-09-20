@@ -22,7 +22,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/icon.png' },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&display=swap'
@@ -79,6 +79,22 @@ export default {
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
-  build: {
-  }
+  build: [
+    {
+      test: /\.(png|jpe?g|gif|svg|webp)$/,
+      loader: 'url-loader',
+      query: {
+        limit: 1000, // 1kB
+        name: 'img/[name].[hash:7].[ext]'
+      }
+    },
+    {
+      test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+      loader: 'url-loader',
+      query: {
+        limit: 1000, // 1kB
+        name: 'fonts/[name].[hash:7].[ext]'
+      }
+    }
+  ]
 }
