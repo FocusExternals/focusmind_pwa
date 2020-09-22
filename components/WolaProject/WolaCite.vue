@@ -24,6 +24,7 @@
         color: #FFFFFF;
     }
     p.author{
+        margin-top:30px;
         font-size: 21px;
         font-family:Judson;
         line-height: 29px;

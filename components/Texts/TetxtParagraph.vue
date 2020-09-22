@@ -13,7 +13,7 @@
     font-family: Judson;
     font-style: normal;
     font-size: 23px;
-    line-height: 170%;
+    line-height: 140%;
     /* or 170% */
     letter-spacing: -0.01em;
     color: #03002B;

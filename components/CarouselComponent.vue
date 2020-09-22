@@ -1,6 +1,6 @@
 <template>
     <div class="carousel-wrapper">
-        <div class="description">
+        <div v-if="legends" class="description">
             <WolaTextGold :w="1000" :size="23">{{desc.index + 1}}.</WolaTextGold>
             <TextSubtitleContent cs-style="white-space:pre;">{{desc.text}}</TextSubtitleContent>
         </div>
@@ -13,9 +13,9 @@
                 </div>
                 
           </VueSlickCarousel>
-          <div class="arrows">
-              <ArrowFill :class="{'disable':(curIndex==0)}" direction="left" :callback="showPrev"/>
-              <ArrowFill :class="{'disable':(curIndex==(images.length-1))}"  direction="right" :callback="showNext"/>
+          <div v-if="arrows" class="arrows">
+              <ArrowFill :class="{'disable':(curIndex==0 && !customSettings.infinite)}" direction="left" :callback="showPrev"/>
+              <ArrowFill :class="{'disable':(curIndex==(images.length-1) && !customSettings.infinite)}"  direction="right" :callback="showNext"/>
           </div>
         </div>
     </div>
@@ -25,6 +25,9 @@
     .carousel-wrapper{
         display:flex;
         width:100%;
+        max-width: 1400px;
+        margin: auto;
+
     }
     .carousel-container .slick-list{
         padding-left: 0px !important;
@@ -81,18 +84,35 @@ export default {
       images:{
           type:Array,
           default:[]
+      },
+      arrows:{
+          type:Boolean,
+          default:true
+      },
+      legends:{
+          type:Boolean,
+          default:true
+      },
+      'custom-settings':{
+          type:Object,
+          default(){
+              return {}
+          }
       }
   },
   data(){
       return {
         settings:{
-            "centerMode":true,
-            "centerPadding": "150px",
-            "focusOnSelect": true,
-            "infinite": false,
-            "slidesToShow": 1,
-            "speed": 500,
-            'arrows':false
+            ...{
+                "centerMode":true,
+                "centerPadding": "150px",
+                "focusOnSelect": true,
+                "infinite": false,
+                "slidesToShow": 1,
+                "speed": 500,
+                'arrows':false
+            },
+            ...this.customSettings
         },
         desc:{
             index:1,
@@ -104,6 +124,9 @@ export default {
   },
   methods:{
       setDesc(index){
+          if(!this.legends || this.customSettings.infinite){
+              return
+          }
           let cur = this.images[index];
           this.desc.index = index;
           this.desc.text = cur.text;

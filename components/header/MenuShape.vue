@@ -94,7 +94,7 @@ export default {
                 },
                 {
                     url:'https://focusmind.net/casos-de-estudio/',
-                    display:'casosd de estudio'
+                    display:'casos de estudio'
                 },
                 {
                     url:'https://focusmind.net/servicios/',

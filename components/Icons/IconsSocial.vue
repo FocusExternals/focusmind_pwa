@@ -34,6 +34,11 @@
     span{
         margin:10px 30px;
     }
+
+    span a{
+        display: inline-block;
+        height: 100%;
+    }
     svg{
         height: 100%;
         vertical-align: middle;

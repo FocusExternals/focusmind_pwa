@@ -24,8 +24,8 @@
         height: 50px;
         font-family: Mont;
         font-style: normal;
-        font-weight: 600;
-        font-size: 21px;
+        font-weight: 700;
+        font-size: 14px;
         line-height: 39px;
         /* or 186% */
 
