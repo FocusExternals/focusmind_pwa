@@ -107,18 +107,18 @@
             <TextTitleContent :underline="true">
               Negocios primero, luego diseño.
             </TextTitleContent>
-            <TextSubtitleContent>
+            <TextSubtitleContent cs-style="font-size:20px">
               Nuestro primer acercamiento es para entender los objetivos de negocio que buscamos lograr con el producto. Una vez definido esto, sabemos lo que tenemos que hacer.
             </TextSubtitleContent>
           </div>
           <div>
-            <TetxtParagraph class="mb">
+            <TetxtParagraph :size="20" class="mb">
               Un nombre y un impactante digital branding que separen al producto que buscamos crear del resto de las opciones que se encuentran en el mercado y se encuentre alineado con nuestros otros productos.
             </TetxtParagraph>
-            <TetxtParagraph class="mb">
+            <TetxtParagraph :size="20" class="mb">
               Una experiencia de usuario que resuelva en la mínima cantidad de pasos posibles la transacción.
             </TetxtParagraph>
-            <TetxtParagraph class="mb">
+            <TetxtParagraph :size="20" class="mb">
               Integración de todas las acciones posibles al site para maximizar el tráfico de los usuarios de la comunidad
             </TetxtParagraph>
             <TextSubtitleContent cs-style="font-size:18px">
@@ -206,7 +206,7 @@
       <div class="sections" id="section8">
         <WolaImageLogo/>
       </div>
-      <div id="section9" class="sections" ref="section9" :style="{justifyContent:'centers'}">
+      <div id="section9" class="sections" ref="section9" :style="{justifyContent:'center'}">
           <div class="padding-block">
               <div class="left full-width">
                 
@@ -241,12 +241,12 @@
             </div>
            
           </div> 
-          <div v-scroll-reveal="{delay:500}" style="display:flex; text-align:left; flex-direction:column; width:100%; max-wdth:1600;">
+          <div v-scroll-reveal="{delay:500}" style="display:flex; text-align:left; flex-direction:column; width:100%; max-width:1600px;">
               <TextSubtitleContent cs-style="color:#B38A58;">
                 <strong>Paso 3</strong>
               </TextSubtitleContent>
-              
-               <CarouselComponent :arrows="true" :legends="false" :images="imagesStep3" :custom-settings="{infinite:true,autoplay:true,swipe:true}"/>
+              <ImageScroll source="step3full.png"/>
+               
           </div>
       </div>
      
@@ -258,17 +258,18 @@
           </div>
       </div>
       <div class="sections mb" id="section11">
-        <WolaImageFinal/>
+        <ImageScroll source="ilustracionFinal.jpg"/>
+        
       </div>
       <div class="sections" id="section12">
-          <div class="padding-block" :style="{display:'flex',justifyContent:'space-around', alignItems:'center'}">
+          <div class="padding-block" :style="{display:'flex', alignItems:'center',marginTop:'0'}">
             <div class="align" :style="{width:'50%'}">
               <div class="mb">
-                <WolaTextGold v-scroll-reveal :size="23" :lh="159">
+                <WolaTextGold v-scroll-reveal :size="20" :lh="159">
                   Buscábamos que el ecosistema marcario tome vida y transmita lo mismo en todos los soportes donde los usuarios consumieran el contenido.
                 </WolaTextGold>
               </div>
-              <TetxtParagraph v-scroll-reveal="{delay:500}">
+              <TetxtParagraph :size="20" v-scroll-reveal="{delay:500}">
                 <strong>Las ilustraciones</strong> se utilizaron en las presentaciones de los profesores, las diferentes secciones de la plataforma, los archivos de lectura y en las guías de estudio para los alumnos.
               </TetxtParagraph>
             </div>
@@ -447,12 +448,12 @@
             <div class="columns mb">
               <div v-scroll-reveal class="col profile">
                 <div class="mb">
-                  <TextRegularContent cs-style="color:#B38A58; font-size:18px;">
+                  <TextRegularContent cs-style="color:#B38A58; font-size:18px; line-height:27px;">
                       <strong>1° perfil</strong>
                   </TextRegularContent>
                   <br>
-                  <TextSubtitleContent class="mb">
-                    <strong>Emprendedor Jr.</strong>
+                  <TextSubtitleContent class="mb" cs-style="line-height:120%">
+                    <strong>Emprendedor<br>Principiante</strong>
                   </TextSubtitleContent>
                 </div>  
                 <ImageResponsive :style="{maxWidth:'223px'}" class="mb" :circle="true" source="betiana.jpg"/>
@@ -471,23 +472,25 @@
                    <TetxtParagraph :size="20">
                     <strong>Integración tecnológica:</strong> Avanzada
                   </TetxtParagraph> 
-                  <TetxtParagraph :size="20">
-                    <strong>Productos Digitales que usa:</strong><br>
-                    Twitter, Instagram, Spotify, Pinterest.
-                  </TetxtParagraph>
-                  <TetxtParagraph :size="20">
-                   "Quiero comenzar con un emprendimiento a vender online"
-                  </TetxtParagraph>
+                  <div :style="{maxWidth:'450px'}">
+                    <TetxtParagraph :size="20">
+                      <strong>Productos Digitales que usa:</strong><br>
+                      Twitter, Instagram, Spotify, Pinterest.
+                    </TetxtParagraph>
+                    <TetxtParagraph :size="20">
+                    "Quiero comenzar con un emprendimiento a vender online"
+                    </TetxtParagraph>
+                  </div>
                 </div>
               </div>
               <div v-scroll-reveal="{delay:250}" class="col profile">
                 <div class="mb">
-                  <TextRegularContent cs-style="color:#B38A58; font-size:18px;">
+                  <TextRegularContent cs-style="color:#B38A58; font-size:18px; line-height:27px;">
                     <strong>2° perfil</strong>
                   </TextRegularContent>
                   <br>
-                  <TextSubtitleContent class="mb">
-                    <strong> Emprendedor Digital</strong>
+                  <TextSubtitleContent class="mb" cs-style="line-height:120%">
+                    <strong> Emprendedor <br>Digital</strong>
                   </TextSubtitleContent>
                 </div>
                 <ImageResponsive :style="{maxWidth:'235px'}" class="mb" :circle="true" source="photo1.jpg"/>
@@ -507,23 +510,25 @@
                     <strong>Integración tecnológica:</strong> Avanzada
 
                   </TetxtParagraph> 
-                  <TetxtParagraph :size="20">
-                    <strong>Productos Digitales que usa:</strong><br>
-                     Instagram, Spotify, Whatsapp, Plataformas de gestión de tiempo, productividad y e-learning.
-                  </TetxtParagraph>
-                  <TetxtParagraph :size="20">
-                   "Necesito dar un próximo paso para mi emprendimiento. Busco mejores resultados"
-                  </TetxtParagraph>
+                  <div :style="{maxWidth:'450px'}">
+                    <TetxtParagraph :size="20">
+                      <strong>Productos Digitales que usa:</strong><br>
+                      Instagram, Spotify, Whatsapp, Plataformas de gestión de tiempo, productividad y e-learning.
+                    </TetxtParagraph>
+                    <TetxtParagraph :size="20">
+                    "Necesito dar un próximo paso para mi emprendimiento. Busco mejores resultados"
+                    </TetxtParagraph>
+                  </div>
                 </div>
               </div>
               <div v-scroll-reveal="{delay:500}" class="col profile">
                 <div class="mb">
-                  <TextRegularContent cs-style="color:#B38A58; font-size:18px;">
+                  <TextRegularContent cs-style="color:#B38A58; font-size:18px; line-height:27px;">
                     <strong>3° perfil</strong>
                   </TextRegularContent>
                   <br>
-                  <TextSubtitleContent class="mb">
-                    <strong>Joven empresario.</strong>
+                  <TextSubtitleContent class="mb" cs-style="line-height:120%">
+                    <strong>Joven <br>empresario.</strong>
                   </TextSubtitleContent>
                 </div>
                 <ImageResponsive :style="{maxWidth:'235px'}" class="mb" :circle="true" source="photo2.jpg"/>
@@ -543,13 +548,15 @@
                     <strong>Integración  tecnológica:</strong>  Intermedia/Avanzada
 
                   </TetxtParagraph>  
-                  <TetxtParagraph :size="20">
-                    <strong>Productos Digitales que usa:</strong><br>
-                     Suite de Google, Microsoft Excel, Spotify, Shopify/Tienda Nube, Coursera, Whatsapp.
-                  </TetxtParagraph>
-                  <TetxtParagraph :size="20">
-                   "Quiero dar el próximo paso. Me faltan habilidades blandas y duras"
-                  </TetxtParagraph>
+                  <div :style="{maxWidth:'450px'}">
+                    <TetxtParagraph :size="20">
+                      <strong>Productos Digitales que usa:</strong><br>
+                      Suite de Google, Microsoft Excel, Spotify, Shopify/Tienda Nube, Coursera, Whatsapp.
+                    </TetxtParagraph>
+                    <TetxtParagraph :size="20">
+                    "Quiero dar el próximo paso. Me faltan habilidades blandas y duras"
+                    </TetxtParagraph>
+                  </div>
                 </div>
               </div>
             </div>
@@ -609,32 +616,27 @@
                   </TetxtParagraph>
                 </div>
                 <TetxtParagraph :size="16" item-icon="x">
-                    Falta de tiempo y de recursos económicos
+                    Aplicación en mi negocio YA
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                   ¿Qué tan bueno serán los cursos? 
+                   ¿Es confiable esta página?
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                    ¿Es seria esta plataforma?
+                    ¿Estará a cargo de gente capacitada?
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                    ¿Estará a cargo de gente capacitada? 
+                    ¿Es sensato pagar para esto? 
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                    ¿Será un desperdicio de plata?
+                    ¿Lo podré aplicar luego a mi negocio?
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                    ¿Cómo sé que me va a servir?
+                     Falta de tiempo. Estrés y cansancio
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                    ¿No será aburrido de ver?
+                    Cómo se traduce ésto en resultados (ROI)
                 </TetxtParagraph>
-                <TetxtParagraph :size="16" item-icon="x">
-                    Falta de disciplina para estudiar a distancia
-                </TetxtParagraph>
-                <TetxtParagraph :size="16" item-icon="x">
-                    Falta de feedback de un profesor
-                </TetxtParagraph>
+                
               </div>
               <div v-scroll-reveal="{delay:500}" class="col" style="padding-left:50px">
                 <div class="full-width align-center mb">
@@ -643,31 +645,28 @@
                   </TetxtParagraph>
                 </div>
                 <TetxtParagraph :size="16" item-icon="x">
-                    Falta de tiempo y de recursos económicos
+                    Aplicación en mi negocio YA
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                   ¿Qué tan bueno serán los cursos? 
+                   ¿Es confiable esta página?
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                    ¿Es seria esta plataforma?
+                    ¿Estará a cargo de gente capacitada?
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                    ¿Estará a cargo de gente capacitada? 
+                    ¿Es sensato pagar para esto? 
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                    ¿Será un desperdicio de plata?
+                   Falta de tiempo. Estrés y cansancio
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                    ¿Cómo sé que me va a servir?
+                    Especificidad y practicidad en los cursos
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                    ¿No será aburrido de ver?
+                    Aburrirme y no poder darle seguimiento
                 </TetxtParagraph>
                 <TetxtParagraph :size="16" item-icon="x">
-                    Falta de disciplina para estudiar a distancia
-                </TetxtParagraph>
-                <TetxtParagraph :size="16" item-icon="x">
-                    Falta de feedback de un profesor
+                    Cómo se traduce ésto en resultados (ROI)
                 </TetxtParagraph>
               </div>
             </div>
@@ -861,10 +860,10 @@
               Desarrollo y Q&amp;A
   
             </TextTitleContent>
-            <TetxtParagraph v-scroll-reveal class="mb">
+            <TetxtParagraph :size="20" v-scroll-reveal class="mb">
               <strong>Una visión a largo plazo.</strong>
             </TetxtParagraph>
-            <TetxtParagraph v-scroll-reveal>
+            <TetxtParagraph :size="20" v-scroll-reveal>
               Nuestro equipo de desarrollo seleccionó las tecnologías que consideramos que nos ayudarían a lograr una performance óptima del producto y al mismo tiempo nos permitirían escalibilidad a lo largo del tiempo y medida que la plataforma vaya creciendo.
             </TetxtParagraph>
           </div>
@@ -894,16 +893,22 @@
       <div class="sections pr" id="sections28" >
         <div class="padding-block columns full-width">
           <div v-scroll-reveal class="flex-column align-center">
-            <WolaTextGold :size="88">90%</WolaTextGold>
-            <TetxtParagraph>Aceptación del producto:<br>9 de cada 10 usuarios dicen que disfrutan estudiar en la plataforma.</TetxtParagraph>
+            <WolaTextGold :size="75">90%</WolaTextGold>
+            <div :style="{maxWidth:'350px'}">
+              <TetxtParagraph :size="20">Aceptación del producto:<br>9 de cada 10 usuarios dicen que disfrutan estudiar en la plataforma.</TetxtParagraph>
+            </div>
           </div>
           <div v-scroll-reveal="{delay:250}" class="flex-column align-center">
-            <WolaTextGold :size="88">1,5 seg</WolaTextGold>
-            <TetxtParagraph>Tiempo de performance del sitio en dispositivos moviles. </TetxtParagraph>
+            <WolaTextGold :size="75">1,5 seg</WolaTextGold>
+            <div :style="{maxWidth:'350px'}">
+              <TetxtParagraph :size="20">Tiempo de performance del sitio en dispositivos moviles. </TetxtParagraph>
+            </div>
           </div>
           <div v-scroll-reveal="{delay:500}" class="flex-column align-center">
-            <WolaTextGold :size="88">2:10 min</WolaTextGold>
-            <TetxtParagraph>Tiempo de permanencia de navegación de los usuarios en el sitio.</TetxtParagraph>
+            <WolaTextGold :size="75">2:10 min</WolaTextGold>
+            <div :style="{maxWidth:'350px'}">
+              <TetxtParagraph :size="20">Tiempo de permanencia de navegación de los usuarios en el sitio.</TetxtParagraph>
+            </div>
           </div>
         </div>
       </div>
@@ -918,21 +923,21 @@
         <LinkExternal url="javascript:void();">Coming soon <ArrowFullRight/></LinkExternal> 
       </div>
     </div>
-    <div class="sections pr" id="sections27">
+    <div class="sections pr" id="sections34" :style="{justifyContent:'center'}">
       
-      <div class="align padding-block full-width">
+      <div class="align padding-block full-width" :style="{maxWidth:'1489px'}">
         <div class="mb">
           <TextSubtitleContent ><strong>Créditos</strong></TextSubtitleContent>
         </div>
         <br>
-        <div class="columns">
+        <div class="columns" :style="{justifyContent:'left'}">
           <div v-scroll-reveal class="col">
             <TextSubtitleContent :size="18"><strong>Juan Pablo Laco</strong></TextSubtitleContent>
             <TetxtParagraph :size="18" class="mb">Product Manager</TetxtParagraph>
             <TextSubtitleContent :size="18"><strong>Maira Graff</strong></TextSubtitleContent>
             <TetxtParagraph :size="18" class="mb">Diseñadora UI/UX</TetxtParagraph>
           </div>
-          <div v-scroll-reveal="{delay:250}" class="col">
+          <div v-scroll-reveal="{delay:250}" class="col" :style="{paddingLeft:'140px'}">
             <TextSubtitleContent :size="18"><strong>Jose Cabrera</strong></TextSubtitleContent>
             <TetxtParagraph :size="18" class="mb">Front-end Developer</TetxtParagraph>
             <TextSubtitleContent :size="18"><strong>Luis Garcés</strong></TextSubtitleContent>
@@ -947,14 +952,14 @@
         </div>
       </div>
     </div>
-    <div id="section30" ref="section30" class="sections pr wrap-on" :style="{marginBottom:'90px'}">
+    <div id="section30" ref="section30" class="sections pr wrap-on" :style="{marginBottom:'90px', justifyContent:'center'}">
       <div class="full-width align mb" :style="{maxWidth:'1489px'}">
         <TextSubtitleContent><strong>Casos de éxito relacionados</strong></TextSubtitleContent>
       </div>
       <div class="columns full-width" :style="{justifyContent:'space-evenly'}">
         <div v-scroll-reveal="{origin:'top'}" class="col flex-column">
           <div>
-            <ImageResponsive source="london.png"/>
+            <ImageResponsive source="london.jpg"/>
           </div>
           <div :style="{display:'flex',alignItems:'center',justifyContent:'space-between'}">
             <TextSubtitleContent cs-style="font-size:17px">
@@ -968,7 +973,7 @@
         
         <div v-scroll-reveal="{origin:'top',delay:250}" class="col flex-column" >
           <div class="">
-            <ImageResponsive source="chubut.png"/>
+            <ImageResponsive source="chubut.jpg"/>
           </div>
           <div :style="{display:'flex',alignItems:'center',justifyContent:'space-between'}">
             <TextSubtitleContent cs-style="font-size:17px">
@@ -1030,7 +1035,6 @@
 </template>
 
 <script>
-
 export default {
   mounted(){  
      window.addEventListener('load', () => {

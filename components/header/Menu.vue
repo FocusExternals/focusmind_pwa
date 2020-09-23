@@ -3,16 +3,18 @@
         <nav>
             <div class="menu-content">
                 <div class="btn-container">
-                    <button class="hamburger hamburger--spring" v-bind:class="{'is-active':active}" v-on:click="toogle()" type="button">
+                    <button class="hamburger hamburger--spring " v-bind:class="{'is-active':active}" v-on:click="toogle()" type="button">
                         <span class="hamburger-box">
                             <span class="hamburger-inner"></span>
                         </span>
                     </button>
                 </div>
                 <div class="brandLogo">
-                    <img src="https://focusmind.net/wp-content/themes/focusmind/images/prelogo.png"/>
+                    <a href="https://focusmind.net/">
+                        <img src="https://focusmind.net/wp-content/themes/focusmind/images/prelogo.png"/>
+                    </a>
                 </div>
-                <div class="toogle-lang">
+                <div class="toogle-lang" v-show="false">
                     <nav class="cl-effect-5"> 
                         <a href="https://focusmind.net/en/">
                             <span data-hover="I PREFER ENGLISH">I PREFER ENGLISH</span>
@@ -30,15 +32,16 @@
     @import '~/assets/css/hamburguer-menu.css';
     .menu-content{
         width:100%;
-        height: 60px;
-        padding-right: 40px;
+        height: 64px;
+        padding-right: 77px;
         background-color: #03002b;
         display: flex;
         align-items: center;
     }
 
     .btn-container{
-        width: 155px;
+        width: 149px;
+        height: 100%;
         display: flex;
         justify-content: center;
         background-color: #080057;
@@ -48,10 +51,24 @@
     }
     .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{
         background-color: #fff !important;
+        width: 30px !important;
+        height: 3px !important;
+        border-radius: 0;
+    }
+    .hamburger:not(.is-active) .hamburger-inner{
+        top:7px !important;
+    }
+
+    .hamburger:not(.is-active) .hamburger-inner::before{
+        top:6px !important;
+    }
+    .hamburger:not(.is-active) .hamburger-inner::after{
+        top:12px !important;
     }
 
     .brandLogo{
-        padding-left: 40px;
+        padding: 22px 40px;
+        height: 100%;
         flex: 1;
     }
      button:active, button:focus{
@@ -59,28 +76,28 @@
         outline: none;
     }
 
-    .toogle-lang{
-        padding-right: 75px;
+    .toogle-lang, .toogle-lang nav{
+        height: 100%;
     }
 
-    nav a {
+    .toogle-lang nav a {
         font-family: Mont;
         font-size:12px;
         color:#fff;
         position: relative;
         display: inline-block;
-        margin: 15px 25px;
+        margin: 22px 50px;
         outline: none;
         /*color: #fff;*/
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 1px;
-        font-weight: 400;
+        font-weight: 500;
         text-shadow: 0 0 1px rgba(255,255,255,0.3);
     }
 
     .cl-effect-5 a {
-        height: 16px;
+        height: 20px;
         overflow: hidden;
         padding: 0 4px;
     }

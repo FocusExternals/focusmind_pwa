@@ -19,9 +19,9 @@
 <style scoped>
     .menu-container{
         position: absolute;
-        top:60px;
+        top:64px;
         display: flex;
-        height: calc(100vh - 60px);
+        height: calc(100vh - 64px);
         width:100%;
         background-color: #03002b;
         z-index: 10;
@@ -57,6 +57,7 @@
 
     .menu-item:hover a{
         color: #ffff;
+        font-weight: 800;
     }
 
     .image-menu{
@@ -82,6 +83,11 @@ export default {
     watch:{
         hide: function(n,o){
            $("#menu-wola").toggle('slow');
+           if(!n){
+               document.documentElement.style.overflow = 'hidden'
+           }else{
+               document.documentElement.style.overflow = 'auto'
+           }
         }
     },
     data(){
