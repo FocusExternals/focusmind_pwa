@@ -1,10 +1,18 @@
 <template>
-    <a :href="to" >
-    <button v-on:mouseover="over=true" v-on:mouseleave="over=false" :class="colors[variant]">
-        <slot></slot>
-        <IconArrowUpSimple  v-if="withArrow" cs-style="transform:rotate(90deg); height:.6em" :color="(over)?arrow_color[variant][1]:arrow_color[variant][0]"/>
-    </button>
-    </a>
+    <span>
+        <n-link v-if="internal" :to="to" >
+            <button v-on:mouseover="over=true" v-on:mouseleave="over=false" :class="colors[variant]">
+                <slot></slot>
+                <IconArrowUpSimple  v-if="withArrow" cs-style="transform:rotate(90deg); height:.6em" :color="(over)?arrow_color[variant][1]:arrow_color[variant][0]"/>
+            </button>
+        </n-link>
+        <a v-else :href="to" >
+        <button v-on:mouseover="over=true" v-on:mouseleave="over=false" :class="colors[variant]">
+            <slot></slot>
+            <IconArrowUpSimple  v-if="withArrow" cs-style="transform:rotate(90deg); height:.6em" :color="(over)?arrow_color[variant][1]:arrow_color[variant][0]"/>
+        </button>
+        </a>
+    </span>
 </template>
 
 <style scoped>
@@ -45,10 +53,13 @@
         
     }
 
-    .theme-pink-inverted-transparent{
+    .theme-pink-inverted-transparent,.theme-pink-inverted-transparent-white{
         background: linear-gradient(90deg,#ff0c62 50%, transparent 0);
         color: #ff0c62;
         border:3px solid #ff0c62;
+    }
+    .theme-pink-inverted-transparent-white{
+        color:#fff;
     }
     .theme-pink-inverted-transparent:hover {
         color: #fff;
@@ -94,6 +105,10 @@ export default {
         'with-arrow':{
             type:Boolean,
             default:false
+        },
+        internal:{
+            type:Boolean,
+            default:false
         }
     },
     data(){
@@ -104,7 +119,8 @@ export default {
                 'pink-inverted':'theme-pink-inverted',
                 blue:"theme-blue",
                 'blue-inverted':'theme-blue-inverted',
-                'pink-transparent':'theme-pink-inverted-transparent'
+                'pink-transparent':'theme-pink-inverted-transparent',
+                'pink-transparent-white':'theme-pink-inverted-transparent-white'
             },
             arrow_color:{
                 pink:['#fff','#ff0c62'],

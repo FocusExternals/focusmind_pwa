@@ -89,6 +89,12 @@
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
     }
+    
+    @media (max-width: 991.98px) { 
+        span{
+            margin: 10px 0;
+        }
+    }
 </style>
 <script>
 export default {

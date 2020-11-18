@@ -10,6 +10,13 @@
         height: 100%;
         width: 100%;
     }
+
+    @media (max-width: 991.98px) { 
+         video{
+            height:auto !important;
+         }
+    }
+    
 </style>
 
 <script>
@@ -25,7 +32,8 @@ export default {
         h:{
             type:Number,
             required:true
-        }
+        },
+        
     }
 }
 </script>

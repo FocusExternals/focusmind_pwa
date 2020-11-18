@@ -38,6 +38,14 @@
         height: 4px;
         background-color: #03002B;
     }
+
+     @media (max-width: 991.98px) { 
+        h2{
+                
+            font-size: 30px;
+            line-height: 34px;
+        }
+    }
     
 </style>
 

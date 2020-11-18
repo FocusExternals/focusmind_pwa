@@ -10,7 +10,7 @@
                     </button>
                 </div>
                 <div class="brandLogo">
-                    <a href="https://focusmind.net/">
+                    <a :href="'https://'+referrer">
                         <img src="https://focusmind.net/wp-content/themes/focusmind/images/prelogo.png"/>
                     </a>
                 </div>
@@ -116,6 +116,21 @@
     }
     .cl-effect-5 a:hover span, .cl-effect-5 a:focus span {
         transform: translateY(-100%);
+    }
+
+    @media (max-width: 991.98px) { 
+        .menu-content{
+            background-color: #020058;
+        }
+        .btn-container{
+            background-color: transparent;
+        }
+        .btn-container:hover{
+            background-color: transparent;
+        }
+        .hamburger-inner{
+            background-color: transparent !important;
+        }
     }
 </style>
 

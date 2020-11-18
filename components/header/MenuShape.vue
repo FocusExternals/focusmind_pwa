@@ -3,7 +3,7 @@
         <div class="menu-items-container">
             <div class="menu-items">
                 <div v-for="(link, i) in links" :key="i" class="menu-item">
-                    <a :href="link.url">{{link.display}}</a>
+                    <a :href="'https://'+referrer+link.url">{{link.display}}</a>
                 </div>
 
             </div>
@@ -65,6 +65,12 @@
         background: url('~assets/images/foto.jpg');
         background-size: auto 100%;
     }
+    
+    @media (max-width: 991.98px) { 
+        .image-menu{
+            display: none;
+        }
+    }
   
    
 </style>
@@ -95,19 +101,19 @@ export default {
             close:false,
             links:[
                 {
-                    url:'https://focusmind.net/agencia/',
+                    url:'/agencia/',
                     display:'agencia'
                 },
                 {
-                    url:'https://focusmind.net/casos-de-estudio/',
+                    url:'/casos-de-estudio/',
                     display:'casos de estudio'
                 },
                 {
-                    url:'https://focusmind.net/servicios/',
+                    url:'/servicios/',
                     display:'servicios'
                 },
                 {
-                    url:'https://focusmind.net/carreras-2/',
+                    url:'/carreras-2/',
                     display:'carreras'
                 },
                 {
@@ -115,7 +121,7 @@ export default {
                     display:'blog'
                 },
                 {
-                    url:'https://focusmind.net/contacto/',
+                    url:'/contacto/',
                     display:'contacto'
                 },
             ]

@@ -27,6 +27,12 @@
         border:none;
         outline: none;
     }
+
+    @media (max-width: 991.98px) { 
+        button{
+            right: 15px;
+        }
+    }
 </style>
 
 <script>

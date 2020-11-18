@@ -30,12 +30,16 @@
 
 </template>
 
-<style>
+<style scoped>
 .WolaLogo {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
+@media (max-width: 991.98px) { 
+    svg{
+        width: 150px !important;
+    }
+}
 @keyframes appear {
   0% {
     opacity: 0;

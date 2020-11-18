@@ -1,8 +1,8 @@
 <template>
-    <a v-if="url" :href="url" :class="[hover?'hover':'no-hover']" v-on:mouseover="hover=true" v-on:mouseleave="hover=false"> 
+    <a v-if="url" :href="url" :class="[hover?'hover':'no-hover',theme]" v-on:mouseover="hover=true" v-on:mouseleave="hover=false"> 
         <slot></slot>
     </a>
-    <span v-else>
+    <span :class="[theme]" v-else>
         <slot></slot>
     </span>
 </template>
@@ -59,6 +59,13 @@
         animation: button-line-blur 1s ease forwards;
         animation-fill-mode: forwards
     }
+
+    a.tcdg,span.tcdg, .tcdg span{
+        color:rgba(3, 0, 43, .62);
+    }
+    a.hover.tcdg::after,a.no-hover.tcdg::after{
+         background-color: rgba(3, 0, 43, .62);
+    }
     @keyframes button-line-hover {
     0% { transform-origin: right; }
     40% { transform: scaleX(0); transform-origin: right;}
@@ -86,7 +93,7 @@
 
 <script>
 export default {
-    props:['url'],
+    props:['url','theme'],
     data(){
         return {
             hover:false

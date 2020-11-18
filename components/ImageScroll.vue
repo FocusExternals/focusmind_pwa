@@ -4,7 +4,7 @@
             <img ref="image" class="scroll-animate-image" :style="{marginLeft:(-margin)+'px'}" :src="require('~/assets/images/'+source)">
         </div>
         <div v-if="maxMargin>0" class="slide-wrapper">
-            <vue-slider :style="{margin:'auto'}" :dotSize="9" :width="39" :height="7" :tooltip="'none'" :dotStyle="{backgroundColor:'#B38A58'}" :railStyle="{backgroundColor:'#C4C4C4'}" :processStyle="{backgroundColor:'#C4C4C4'}" :max="maxMargin"  v-model="margin"></vue-slider>
+            <vue-slider :style="{margin:'auto'}" :dotSize="9" :width="39" :height="7" :tooltip="'none'" :dotStyle="{backgroundColor:colorDot}" :railStyle="{backgroundColor:'#C4C4C4'}" :processStyle="{backgroundColor:'#C4C4C4'}" :max="maxMargin"  v-model="margin"></vue-slider>
         </div>
     </div>
 </template>
@@ -27,7 +27,12 @@
 
     @media (max-width: 1400px) {
         .scroll-animate-image{
-            max-height: 600px;
+            max-height: 80vh;
+        }
+            
+        .slide-wrapper{
+            margin-top: 31px;
+            margin-bottom:31px;
         }
     }
 </style>
@@ -51,6 +56,11 @@ export default {
         })
         
     },
+    computed:{
+        colorDot(){
+            return this.colors.dot[this.theme]
+        }
+    },
     props:{
         'container-width':{
             type:String,
@@ -63,12 +73,23 @@ export default {
         source:{
             type:String,
             required:true
+        },
+        theme:{
+            type:String,
+            default:'wola'
         }
     },
     data(){
         return {
             margin:0,
-            maxMargin:0
+            maxMargin:0,
+            colors:{
+                dot:{
+                    tcdg:'#FB8137',
+                    wola:'#B38A58'
+                }
+            },
+            
         }
     },
 }

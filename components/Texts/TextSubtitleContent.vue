@@ -32,4 +32,12 @@ export default {
         font-weight: 700;
         font-style: normal;
     }
+
+    @media (max-width: 991.98px) { 
+        span{
+            font-size: 20px;
+            
+            z-index:2;
+        }
+    }
 </style>

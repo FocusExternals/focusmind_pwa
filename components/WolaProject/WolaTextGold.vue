@@ -1,5 +1,5 @@
 <template>
-    <span :style="{fontSize:size+'px',lineHeight:lh+'%',paddingBottom:pb+'px',fontWeight:w}">
+    <span :class="theme" :style="{...csStyle,fontSize:size+'px',lineHeight:lh+'%',paddingBottom:pb+'px',fontWeight:w}">
         <slot></slot>
     </span>
 </template>
@@ -17,6 +17,14 @@
     em{
         font-style: normal;
         color:#03002B;
+    }
+
+    span.tcdg{
+        color:#fff;
+    }
+
+    .tcdg em{
+        color:#FB8137;
     }
 </style>
 
@@ -38,6 +46,14 @@ export default {
         w:{
             type:Number,
             default:800
+        },
+        'cs-style':{
+            type:Object,
+            default:function(){return {}}
+        },
+        theme:{
+            type:String,
+            default:''
         }
     }
 }

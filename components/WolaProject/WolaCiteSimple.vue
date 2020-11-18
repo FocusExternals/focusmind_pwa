@@ -1,5 +1,5 @@
 <template>
-    <p>
+    <p :style="{color:textColor}">
         <slot></slot>
     </p>
 </template>
@@ -19,4 +19,37 @@
 
         color: #B38A58;
     }
+
+    @media (max-width: 991.98px) { 
+         p{
+            
+            font-size: 30px;
+            line-height: 43px;
+         }
+    }
 </style>
+
+<script>
+export default {
+    props:{
+        theme:{
+            type:String,
+            default:'wola'
+        }
+    },
+    computed:{
+        textColor(){
+            return this.colors[this.theme]
+        }
+    },
+    data(){
+        return {
+            colors:{
+                tcdg:'#2B80DA',
+                wola:'#B38A58'
+            },
+            
+        }
+    },
+}
+</script>

@@ -1,5 +1,5 @@
 <template>
-    <p :style="{'fontSize':size+'px',lineHeight:lh+'%'}" >
+    <p :class="theme" :style="{'fontSize':size+'px',lineHeight:lh+'%',color:color}" >
         <span class="dot" v-if="itemIcon">{{itemIcon}}</span>  
         <span :class="{'with-padding':btn}">
             <slot>
@@ -31,6 +31,16 @@
      font-family: Mont;
      font-weight: 800;
  }
+
+ .tcdg .dot{
+     color:#FB8137
+ }
+
+ @media (max-width: 991.98px) { 
+     p{
+         font-size: 19px;
+     }
+ }
 </style>
 
 <script>
@@ -50,6 +60,14 @@ export default {
         'lh':{
             type:Number,
             default:170
+        },
+        theme:{
+            type:String,
+            default:''
+        },
+        color:{
+            type:String,
+            default:'#03002B'
         }
     }
 }

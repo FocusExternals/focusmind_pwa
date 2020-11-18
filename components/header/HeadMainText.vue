@@ -16,7 +16,13 @@
         letter-spacing: -0.02em;
 
         color: #FFFFFF;
-        margin-top: 20px;
+        margin-top: auto;
         margin-bottom: 20px;
     }
+    @media (max-width: 991.98px) { 
+        h1{
+            font-size: 25px;
+        }
+    }
+
 </style>

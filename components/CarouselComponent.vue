@@ -1,8 +1,8 @@
 <template>
     <div class="carousel-wrapper">
         <div v-if="legends" class="description">
-            <WolaTextGold :w="1000" :size="23">{{desc.index + 1}}.</WolaTextGold>
-            <TextSubtitleContent cs-style="white-space:pre;">{{desc.text}}</TextSubtitleContent>
+            <WolaTextGold :cs-style="{color:colorStep}" :w="1000" :size="23">{{desc.index + 1}}.</WolaTextGold>
+            <TextSubtitleContent class="breakline" >{{desc.text}}</TextSubtitleContent>
         </div>
         <div class="carousel-container">
             <VueSlickCarousel class="full-width" v-bind="settings" ref="carousel" @afterChange="setDesc">
@@ -29,16 +29,21 @@
         margin: auto;
 
     }
+
     .carousel-container .slick-list{
         padding-left: 0px !important;
     }
     .description{
         min-width:430px;
-        align-items: left;
+        align-items: flex-start;
         justify-content: center;
         display: flex;
         flex-direction: column;
         text-align: left;
+    }
+
+    .breakline{
+        white-space:pre;
     }
     .carousel-container{
         flex-grow: 2;
@@ -67,6 +72,35 @@
         opacity:.6;
         cursor:initial;
     }
+
+    @media (max-width: 991.98px) { 
+        .description{
+            min-width: auto;
+            max-width: 100%;
+
+        }
+        .breakline{
+            white-space:normal;
+        }
+         .arrows{
+            display:none;
+        }
+
+        .imageContainer{
+            height: auto;
+        }
+
+        .imageContainer img{
+            width: calc(100vw - 82px);
+            height: auto;
+        }
+
+        .carousel-wrapper{
+            
+        flex-wrap: wrap;
+        }
+    }
+
 </style>
 
 <script>
@@ -79,6 +113,11 @@ export default {
   mounted(){
       this.setDesc(0);
       $('.slick-list').css('padding-left','0')
+  },
+  computed:{
+      colorStep(){
+          return this.colors.step[this.theme]
+      }
   },
   props:{
       images:{
@@ -98,19 +137,38 @@ export default {
           default(){
               return {}
           }
+      },
+      theme:{
+          type:String,
+          default:'wola'
       }
   },
   data(){
       return {
+        colors:{
+            step:{
+                tcdg:'#FB8137',
+                wola:'#B38A58'
+            }
+        },
         settings:{
             ...{
                 "centerMode":true,
                 "centerPadding": "150px",
-                "focusOnSelect": true,
+                "focusOnSelect": false,
                 "infinite": false,
                 "slidesToShow": 1,
                 "speed": 500,
-                'arrows':false
+                'arrows':false,
+                responsive:[
+                    {
+                        breakpoint: 992,
+                        settings:{
+                            "centerPadding": "20px",
+                            touchMove:true
+                        }
+                    }
+                ]
             },
             ...this.customSettings
         },

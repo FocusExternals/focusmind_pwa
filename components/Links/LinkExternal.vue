@@ -1,5 +1,5 @@
 <template>
-    <a v-bind:href="url" target="_blank">
+    <a :style="{color:textColor}" v-bind:href="url" target="_blank">
         <slot></slot>
     </a>
 </template>
@@ -18,6 +18,29 @@
 </style>
 <script>
 export default {
-    props:['url']
+    props:{
+        url:{
+            type:String,
+            required:true
+        },
+        theme:{
+            type:String,
+            default:'wola'
+        }
+    },
+    computed:{
+        textColor(){
+            return this.colors[this.theme]
+        }
+    },
+    data(){
+        return {
+            colors:{
+                tcdg:'#2B80DA',
+                wola:'#B38A58'
+            },
+            
+        }
+    },
 }
 </script>

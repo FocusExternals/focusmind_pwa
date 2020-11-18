@@ -1,6 +1,6 @@
 <template>
     <span>
-        <img :style="{height:h+'px'}" :src="require('~/assets/images/'+icons[icon])"/>
+        <img :style="{height:(isMobile?hm:h)+'px'}" :src="require('~/assets/images/'+icons[icon])"/>
     </span>
     
 </template>
@@ -14,6 +14,12 @@
         margin-left: 16px;
         line-height: 120%;
     }
+    @media (max-width: 991.98px) { 
+        span{
+            margin-left: 0;
+        }
+    }
+
 </style>
 <script>
 export default {
@@ -25,16 +31,26 @@ export default {
         h:{
             type:Number,
             default:23
+        },
+        hm:{
+            type:Number,
+        },
+        theme:{
+            type:String,
+            default:''
         }
     },
     data(){
         return {
             icons:{
-                react:'react.png',
-                node:'Node-js-Logo.png',
-                sass:'sass-logo-wall.png',
-                redux:'redux-logo-landscape.png',
-                mongo:'mongodb.png'
+                react:this.theme+'react.png',
+                node:this.theme+'Node-js-Logo.png',
+                sass:this.theme+'sass-logo-wall.png',
+                redux:this.theme+'redux-logo-landscape.png',
+                mongo:this.theme+'mongodb.png',
+                jquery:this.theme+'jquery.png',
+                next:this.theme+'next.png',
+                laravel:this.theme+'laravel.png'
             }
             
         }
